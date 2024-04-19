@@ -610,6 +610,8 @@ python main.py --experiment singleshot --pruner npb --compression 2
 
 lr-drops 修改为该值后 (按照命令行的参数同时修改 beta=2)，copy 的代码最终精度达到 42.79%（path = 35.1873, node = 7.2284）。
 
+推测学习率过早衰减不利于跳出局部极小值。
+
 同时，使用源代码执行以下命令
 
 ```python
@@ -619,7 +621,7 @@ python main.py --experiment singleshot --pruner npb --compression 2
 --lr-drops 30 60 80
 ```
 
-得到的结果如下：
+采用原论文的 lr-drops，源代码运行结果如下：
 
 ![png](./res/res18_99_368o.png)
 
